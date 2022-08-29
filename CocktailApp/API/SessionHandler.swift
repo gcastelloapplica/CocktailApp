@@ -53,30 +53,10 @@ class RequestHandler {
         let decoder = JSONDecoder()
         do {
             let decodedData = try decoder.decode(CocktailData.self, from: cocktailData)
-            return transformData(decodedData)
+            return Functions.transformData(decodedData)
         } catch {
             debugPrint(error)
             return nil
         }
-    }
-    
-    func transformData(_ data: CocktailData) -> [CocktailModel] {
-        var arr = [CocktailModel]()
-        data.drinks.forEach {
-            let id = $0.idDrink
-            let name = $0.strDrink
-            let imageUrl = $0.strDrinkThumb
-            let glass = $0.strGlass
-            let instructions = $0.strInstructions
-            let ingredients = [Ingredient(name: $0.strIngredient1, measure: $0.strMeasure1),
-                               Ingredient(name: $0.strIngredient2, measure: $0.strMeasure2),
-                               Ingredient(name: $0.strIngredient3, measure: $0.strMeasure3),
-                               Ingredient(name: $0.strIngredient4, measure: $0.strMeasure4),
-                               Ingredient(name: $0.strIngredient5, measure: $0.strMeasure5)]
-            
-            arr.append(CocktailModel(glass: glass, id: id, imageUrl: imageUrl, instructions: instructions, ingredients: ingredients, name: name))
-        }
-        
-        return arr
     }
 }

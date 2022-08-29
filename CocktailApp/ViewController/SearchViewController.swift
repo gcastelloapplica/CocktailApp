@@ -9,35 +9,32 @@ import UIKit
 
 class SearchViewController: UIViewController {
     
-    @IBOutlet weak var cocktailsTable: UITableView!
-    @IBOutlet weak var searchByMenu: UIMenu!
+    @IBOutlet weak var criteriaButton: UIButton!
     @IBOutlet weak var searchBar: UISearchBar!
-    @IBOutlet weak var searchByButton: UIButton!
+    @IBOutlet weak var cocktailsTable: UITableView!
     
     var cocktails: [CocktailModel] { return CocktailViewModel.shared.Cocktails ?? [] }
     var searchTimer: Timer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        cocktailsTable.isHidden = true
         cocktailsTable.delegate = self
         cocktailsTable.dataSource = self
         cocktailsTable.register(UINib(nibName: "CocktailTableViewCell", bundle: nil), forCellReuseIdentifier: "CocktailTableViewCell")
         searchBar.delegate = self
         [cocktailsTable, searchBar].forEach{ $0?.setCornerRadius() }
-        searchByButton.menu = Functions.setPopUpButton()
+        criteriaButton.menu = Functions.setPopUpButton()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         searchTimer?.invalidate()
     }
-
-    @IBAction func searchByAction(_ sender: UIButton) {
-        
-    }
     
     @IBAction func goRandomAction(_ sender: UIButton) {
         CocktailViewModel.shared.getRandom {
             self.cocktailsTable.reloadData()
+            self.cocktailsTable.isHidden = false
         }
     }
 }
@@ -54,10 +51,13 @@ extension SearchViewController: UISearchBarDelegate {
         //search debouncing for req traffic control
         searchTimer?.invalidate()
         searchTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: false, block: { [weak self] (timer) in
-            guard let self = self else { return }
-            CocktailViewModel.shared.getRandom {
+            guard let self = self,
+                  let criteria = Criteria(rawValue: (self.criteriaButton.titleLabel?.text)!) else { return }
+            let query = searchBar.text ?? ""
+            CocktailViewModel.shared.getCocktails(query: query, criteria: criteria) {
                 timer.invalidate()
                 self.cocktailsTable.reloadData()
+                self.cocktailsTable.isHidden = false
             }
         })
     }
@@ -73,6 +73,12 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "CocktailTableViewCell") as? CocktailTableViewCell else { return UITableViewCell() }
         cell.setupCell(cocktails[indexPath.row])
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ResultsViewController") as! ResultsViewController
+        vc.cocktail = cocktails[indexPath.row]
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
 }

@@ -14,6 +14,7 @@ struct CocktailData: Codable {
 
 struct DetailedCocktailData: Codable {
     let idDrink: String
+    let strCategory: String?
     let strDrink: String
     let strDrinkThumb: String?
     let strGlass: String?
@@ -36,10 +37,11 @@ struct Ingredient: Codable {
 }
 
 struct CocktailModel {
+    let category: String?
     let glass: String?
     let id: String
     let imageUrl: String?
     let instructions: String?
-    let ingredients: [Ingredient?]
+    let ingredients: [Ingredient]
     let name: String
 }

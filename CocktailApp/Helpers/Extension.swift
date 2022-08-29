@@ -12,6 +12,13 @@ extension UIView {
     func setCornerRadius() {
         self.layer.cornerRadius = 5
     }
+    func setCornerRadius(_ rad: CGFloat) {
+        self.layer.cornerRadius = rad
+    }
+    
+    func setCircular() {
+        self.layer.cornerRadius = self.frame.height / 2
+    }
 }
 
 extension UIImageView {

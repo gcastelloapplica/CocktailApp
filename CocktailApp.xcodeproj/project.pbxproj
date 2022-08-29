@@ -28,6 +28,9 @@
 		EB92F58B28BC10A6004A033C /* CocktailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB92F58928BC10A6004A033C /* CocktailTableViewCell.swift */; };
 		EB92F58C28BC10A6004A033C /* CocktailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB92F58A28BC10A6004A033C /* CocktailTableViewCell.xib */; };
 		EB92F58E28BC1FE4004A033C /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB92F58D28BC1FE4004A033C /* Functions.swift */; };
+		EB92F59028BC25A3004A033C /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB92F58F28BC25A3004A033C /* Enums.swift */; };
+		EB92F59328BC2AFB004A033C /* IngredientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB92F59128BC2AFB004A033C /* IngredientTableViewCell.swift */; };
+		EB92F59428BC2AFB004A033C /* IngredientTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB92F59228BC2AFB004A033C /* IngredientTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +76,9 @@
 		EB92F58928BC10A6004A033C /* CocktailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailTableViewCell.swift; sourceTree = "<group>"; };
 		EB92F58A28BC10A6004A033C /* CocktailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CocktailTableViewCell.xib; sourceTree = "<group>"; };
 		EB92F58D28BC1FE4004A033C /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
+		EB92F58F28BC25A3004A033C /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		EB92F59128BC2AFB004A033C /* IngredientTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientTableViewCell.swift; sourceTree = "<group>"; };
+		EB92F59228BC2AFB004A033C /* IngredientTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IngredientTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +180,7 @@
 				EB564E6A28BABB7F00F668D9 /* Constants.swift */,
 				EB564E7128BACCC600F668D9 /* CocktailViewModel.swift */,
 				EB92F58D28BC1FE4004A033C /* Functions.swift */,
+				EB92F58F28BC25A3004A033C /* Enums.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -199,6 +206,8 @@
 			children = (
 				EB92F58928BC10A6004A033C /* CocktailTableViewCell.swift */,
 				EB92F58A28BC10A6004A033C /* CocktailTableViewCell.xib */,
+				EB92F59128BC2AFB004A033C /* IngredientTableViewCell.swift */,
+				EB92F59228BC2AFB004A033C /* IngredientTableViewCell.xib */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -313,6 +322,7 @@
 				EB92F58C28BC10A6004A033C /* CocktailTableViewCell.xib in Resources */,
 				EB564E6428BA7F7300F668D9 /* SearchViewController.xib in Resources */,
 				EB564E6128BA7F7300F668D9 /* ResultsViewController.xib in Resources */,
+				EB92F59428BC2AFB004A033C /* IngredientTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,11 +349,13 @@
 			files = (
 				EB564E6328BA7F7300F668D9 /* SearchViewController.swift in Sources */,
 				EB564E6D28BABC2700F668D9 /* SessionHandler.swift in Sources */,
+				EB92F59328BC2AFB004A033C /* IngredientTableViewCell.swift in Sources */,
 				EB564E3228BA7F5900F668D9 /* ViewController.swift in Sources */,
 				EB564E7028BAC44D00F668D9 /* Cocktail.swift in Sources */,
 				EB564E7228BACCC600F668D9 /* CocktailViewModel.swift in Sources */,
 				EB564E6B28BABB7F00F668D9 /* Constants.swift in Sources */,
 				EB92F58B28BC10A6004A033C /* CocktailTableViewCell.swift in Sources */,
+				EB92F59028BC25A3004A033C /* Enums.swift in Sources */,
 				EB564E2E28BA7F5900F668D9 /* AppDelegate.swift in Sources */,
 				EB564E3028BA7F5900F668D9 /* SceneDelegate.swift in Sources */,
 				EB564E6228BA7F7300F668D9 /* ResultsViewController.swift in Sources */,
