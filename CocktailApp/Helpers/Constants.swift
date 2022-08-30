@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  Constants.swift
 //  CocktailApp
 //
 //  Created by Gaspar on 27/08/2022.

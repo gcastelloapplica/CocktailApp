@@ -1,8 +1,8 @@
 //
-//  UIButton+Extension.swift
-//  Yacare
+//  Extension.swift
+//  CocktailApp
 //
-//  Created by Leandro Berli on 02/09/2021.
+//  Created by Gaspar on 28/08/2022.
 //
 
 import Foundation
@@ -33,6 +33,17 @@ extension UIImageView {
                 }
             }
         }
+    }
+}
+
+extension UIViewController {
+    
+    func showAlertView(with text: String){
+        let vc = AlertViewController(nibName: "AlertViewController", bundle: nil)
+        vc.text = text
+        vc.modalPresentationStyle = .overFullScreen
+        vc.modalTransitionStyle = .crossDissolve
+        self.present(vc, animated: true, completion: nil)
     }
 }
 
