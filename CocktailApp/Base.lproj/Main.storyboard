@@ -55,9 +55,6 @@
                                                             <color key="baseForegroundColor" red="0.85490196080000003" green="0.85490196080000003" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
                                                             <color key="baseBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </buttonConfiguration>
-                                                        <connections>
-                                                            <action selector="searchByAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="z9W-kK-HtC"/>
-                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -326,6 +323,9 @@
             <point key="canvasLocation" x="28.985507246376812" y="83.705357142857139"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="l9e-HN-wfa"/>
+    </designables>
     <resources>
         <image name="chevron.down" catalog="system" width="128" height="72"/>
         <systemColor name="systemPinkColor">

@@ -18,10 +18,8 @@
 		EB564E3A28BA7F5A00F668D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB564E3828BA7F5A00F668D9 /* LaunchScreen.storyboard */; };
 		EB564E4F28BA7F5B00F668D9 /* CocktailAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB564E4E28BA7F5B00F668D9 /* CocktailAppUITests.swift */; };
 		EB564E5128BA7F5B00F668D9 /* CocktailAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB564E5028BA7F5B00F668D9 /* CocktailAppUITestsLaunchTests.swift */; };
-		EB564E6128BA7F7300F668D9 /* ResultsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB564E5D28BA7F7300F668D9 /* ResultsViewController.xib */; };
 		EB564E6228BA7F7300F668D9 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB564E5E28BA7F7300F668D9 /* ResultsViewController.swift */; };
 		EB564E6328BA7F7300F668D9 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB564E5F28BA7F7300F668D9 /* SearchViewController.swift */; };
-		EB564E6428BA7F7300F668D9 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB564E6028BA7F7300F668D9 /* SearchViewController.xib */; };
 		EB564E6728BAA72800F668D9 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB564E6628BAA72800F668D9 /* Extension.swift */; };
 		EB564E6B28BABB7F00F668D9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB564E6A28BABB7F00F668D9 /* Constants.swift */; };
 		EB564E6D28BABC2700F668D9 /* SessionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB564E6C28BABC2700F668D9 /* SessionHandler.swift */; };
@@ -79,10 +77,8 @@
 		EB564E4A28BA7F5B00F668D9 /* CocktailAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CocktailAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB564E4E28BA7F5B00F668D9 /* CocktailAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailAppUITests.swift; sourceTree = "<group>"; };
 		EB564E5028BA7F5B00F668D9 /* CocktailAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		EB564E5D28BA7F7300F668D9 /* ResultsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResultsViewController.xib; sourceTree = "<group>"; };
 		EB564E5E28BA7F7300F668D9 /* ResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 		EB564E5F28BA7F7300F668D9 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
-		EB564E6028BA7F7300F668D9 /* SearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
 		EB564E6628BAA72800F668D9 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		EB564E6A28BABB7F00F668D9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		EB564E6C28BABC2700F668D9 /* SessionHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionHandler.swift; sourceTree = "<group>"; };
@@ -217,9 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				EB564E5E28BA7F7300F668D9 /* ResultsViewController.swift */,
-				EB564E5D28BA7F7300F668D9 /* ResultsViewController.xib */,
 				EB564E5F28BA7F7300F668D9 /* SearchViewController.swift */,
-				EB564E6028BA7F7300F668D9 /* SearchViewController.xib */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -396,8 +390,6 @@
 				EB564E3728BA7F5A00F668D9 /* Assets.xcassets in Resources */,
 				EB564E3528BA7F5900F668D9 /* Main.storyboard in Resources */,
 				EB92F58C28BC10A6004A033C /* CocktailTableViewCell.xib in Resources */,
-				EB564E6428BA7F7300F668D9 /* SearchViewController.xib in Resources */,
-				EB564E6128BA7F7300F668D9 /* ResultsViewController.xib in Resources */,
 				EB92F59428BC2AFB004A033C /* IngredientTableViewCell.xib in Resources */,
 				EBD1B2E728BDA1E9007D411B /* AlertViewController.xib in Resources */,
 			);

@@ -36,7 +36,6 @@ class Functions: NSObject {
             let filteredIngredients = Functions.filteredIngredients($0)
             arr.append(CocktailModel(category:category, glass: glass, id: id, imageUrl: imageUrl, instructions: instructions, ingredients: filteredIngredients, name: name))
         }
-        
         return arr
     }
     

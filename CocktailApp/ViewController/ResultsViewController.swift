@@ -20,6 +20,8 @@ class ResultsViewController: UIViewController {
     
     var cocktail: CocktailModel?
     var ingredients: [Ingredient?] { return cocktail?.ingredients.compactMap{$0} ?? [] }
+    var query: String?
+    var ingredient: Ingredient? { return cocktail?.ingredients.first{$0.name == query} }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,8 +53,8 @@ extension ResultsViewController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "IngredientTableViewCell") as? IngredientTableViewCell,
         let ingredient = ingredients[indexPath.row]
         else { return UITableViewCell() }
-        
-        cell.setupCell(ingredient)
+        let isOnQuery = ingredient.name == self.ingredient?.name ?? ""
+        cell.setupCell(ingredient, isOnQuery)
         return cell
     }
 }

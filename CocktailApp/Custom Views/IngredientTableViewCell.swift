@@ -13,10 +13,13 @@ class IngredientTableViewCell: UITableViewCell {
     @IBOutlet weak var ingredientLabel: UILabel!
     @IBOutlet weak var measureLabel: UILabel!
     
-    func setupCell(_ data: Ingredient) {
+    func setupCell(_ data: Ingredient, _ isOnQuery: Bool) {
+        if isOnQuery {
+            ingredientLabel.textColor = .black}
         ingredientLabel.text = data.name
         measureLabel.text = data.measure
         wrapperView.setCornerRadius(CGFloat(10))
+        
     }
     
 }

@@ -13,6 +13,10 @@ class CocktailTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var category: UILabel!
     
+    func cleanCell() {
+        thumbnail.image = UIImage()
+        titleLabel.text = ""
+    }
     
     func setupCell(_ data: CocktailModel) {
         thumbnail.setCornerRadius()
