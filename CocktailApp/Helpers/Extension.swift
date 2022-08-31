@@ -47,3 +47,12 @@ extension UIViewController {
     }
 }
 
+extension String {
+    func trimAllSpace() -> String {
+         return components(separatedBy: .whitespacesAndNewlines).joined()
+    }
+    func trimSpace() -> String {
+        return self.trimmingCharacters(in: .whitespacesAndNewlines)
+    }
+}
+

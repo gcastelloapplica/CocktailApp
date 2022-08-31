@@ -15,8 +15,8 @@ class Functions: NSObject {
             // navigates to Details
         }
         var optionsArray = [UIAction]()
-        [Criteria.Name.rawValue,Criteria.Ingredients.rawValue].forEach {
-            let action = UIAction(title: $0, state: .off, handler: optionClosure)
+        for criteria in Criteria.allCases {
+            let action = UIAction(title: criteria.rawValue, state: .off, handler: optionClosure)
             optionsArray.append(action)
         }
         optionsArray[0].state = .on

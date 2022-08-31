@@ -19,6 +19,7 @@ struct ApiInfo {
     static let baseURL: String = "https://www.thecocktaildb.com/"
     static let cocktailsByName: String = "\(baseURL)api/json/v1/1/search.php?s=" // complete query with name
     static let cocktailsByIngredients: String = "\(baseURL)api/json/v1/1/filter.php?i=" // complete query with ingredient
+    static let cocktailById: String = "\(baseURL)api/json/v1/1/lookup.php?i="
     static let cocktailsRandom: String = "\(baseURL)api/json/v1/1/random.php"
 }
 
@@ -38,7 +39,12 @@ class RequestHandler {
                 }
                 if let data = data {
                     if let parsedData = self.parseJSON(data) {
-                        CocktailViewModel.shared.Cocktails = parsedData
+                        CocktailViewModel.shared.cocktails = parsedData
+                        DispatchQueue.main.async {
+                            completion()
+                        }
+                    } else {
+                        CocktailViewModel.shared.cocktails?.removeAll()
                         DispatchQueue.main.async {
                             completion()
                         }

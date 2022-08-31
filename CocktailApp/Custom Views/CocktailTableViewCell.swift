@@ -11,14 +11,14 @@ class CocktailTableViewCell: UITableViewCell {
 
     @IBOutlet weak var thumbnail: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var category: UILabel!
     
     
     func setupCell(_ data: CocktailModel) {
         thumbnail.setCornerRadius()
         thumbnail.loadFrom(URLAddress: data.imageUrl ?? "")
         titleLabel.text = data.name
-        descriptionLabel.text = data.instructions
+        category.text = data.category
     }
 
 }

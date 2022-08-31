@@ -7,6 +7,6 @@
 
 import Foundation
 
-enum Criteria: String {
-    case Ingredients,Name
+enum Criteria: String, CaseIterable {
+    case ingredients, name
 }

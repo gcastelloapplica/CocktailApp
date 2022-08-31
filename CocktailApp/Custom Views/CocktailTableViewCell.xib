@@ -30,16 +30,16 @@
                                 <rect key="frame" x="110" y="10" width="456" height="100"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y8a-04-Eeq">
-                                        <rect key="frame" x="423" y="0.0" width="33" height="30"/>
+                                        <rect key="frame" x="423" y="0.0" width="33" height="60"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="evX-ph-Nl7"/>
+                                            <constraint firstAttribute="height" constant="60" id="evX-ph-Nl7"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UpC-xr-YTi">
-                                        <rect key="frame" x="386.5" y="30" width="69.5" height="70"/>
+                                        <rect key="frame" x="386.5" y="60" width="69.5" height="40"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -59,6 +59,7 @@
                         </constraints>
                     </stackView>
                 </subviews>
+                <color key="backgroundColor" red="0.63529411759999999" green="0.4088365437" blue="0.38906581880000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
                     <constraint firstItem="23i-IS-wap" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="GsH-be-at3"/>
                     <constraint firstItem="23i-IS-wap" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="I5k-5O-Lri"/>
@@ -69,7 +70,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="descriptionLabel" destination="UpC-xr-YTi" id="1v4-TS-YVs"/>
+                <outlet property="category" destination="UpC-xr-YTi" id="1v4-TS-YVs"/>
                 <outlet property="thumbnail" destination="b2P-7F-uJf" id="vGq-Kz-9c7"/>
                 <outlet property="titleLabel" destination="Y8a-04-Eeq" id="Fp5-5K-68c"/>
             </connections>
