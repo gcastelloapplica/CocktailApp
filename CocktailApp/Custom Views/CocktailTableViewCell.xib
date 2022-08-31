@@ -19,18 +19,20 @@
                     <stackView opaque="NO" contentMode="scaleToFill" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="23i-IS-wap">
                         <rect key="frame" x="20" y="5" width="566" height="120"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hourglass.start" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="b2P-7F-uJf">
-                                <rect key="frame" x="0.0" y="11" width="100" height="97.5"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="b2P-7F-uJf">
+                                <rect key="frame" x="0.0" y="10" width="100" height="100"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" red="0.85490196080000003" green="0.85490196080000003" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="0By-eA-bkc"/>
                                     <constraint firstAttribute="height" constant="100" id="U0T-3F-Qti"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="kMv-my-SlH">
-                                <rect key="frame" x="110" y="10" width="456" height="100"/>
+                                <rect key="frame" x="130" y="10" width="436" height="100"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y8a-04-Eeq">
-                                        <rect key="frame" x="423" y="0.0" width="33" height="60"/>
+                                        <rect key="frame" x="403" y="0.0" width="33" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="evX-ph-Nl7"/>
                                         </constraints>
@@ -38,8 +40,8 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UpC-xr-YTi">
-                                        <rect key="frame" x="386.5" y="60" width="69.5" height="40"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="See more &gt;" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UpC-xr-YTi">
+                                        <rect key="frame" x="366.5" y="60" width="69.5" height="40"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -52,7 +54,7 @@
                         </subviews>
                         <constraints>
                             <constraint firstItem="kMv-my-SlH" firstAttribute="top" secondItem="23i-IS-wap" secondAttribute="top" constant="10" id="ENk-f0-azi"/>
-                            <constraint firstItem="kMv-my-SlH" firstAttribute="leading" secondItem="b2P-7F-uJf" secondAttribute="trailing" constant="10" id="I9c-fX-sz6"/>
+                            <constraint firstItem="kMv-my-SlH" firstAttribute="leading" secondItem="b2P-7F-uJf" secondAttribute="trailing" constant="30" id="I9c-fX-sz6"/>
                             <constraint firstAttribute="bottom" secondItem="kMv-my-SlH" secondAttribute="bottom" constant="10" id="UhL-Bo-FvM"/>
                             <constraint firstItem="b2P-7F-uJf" firstAttribute="centerY" secondItem="23i-IS-wap" secondAttribute="centerY" id="rO9-qI-uuu"/>
                             <constraint firstAttribute="height" constant="120" id="sTY-hx-6eO"/>
@@ -77,7 +79,4 @@
             <point key="canvasLocation" x="356.52173913043481" y="110.15625"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="hourglass.start" catalog="system" width="102" height="128"/>
-    </resources>
 </document>

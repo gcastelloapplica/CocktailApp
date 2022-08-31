@@ -18,7 +18,6 @@ class CocktailTableViewCell: UITableViewCell {
         thumbnail.setCornerRadius()
         thumbnail.loadFrom(URLAddress: data.imageUrl ?? "")
         titleLabel.text = data.name
-        category.text = data.category
     }
 
 }

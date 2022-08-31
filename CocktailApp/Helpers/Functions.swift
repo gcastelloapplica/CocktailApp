@@ -9,10 +9,10 @@ import UIKit
 
 class Functions: NSObject {
     
-    static func setPopUpButton() -> UIMenu {
+    static func setPopUpButton(_ closure: @escaping()->Void) -> UIMenu {
         let optionClosure = { (action: UIAction) in
             print(action.title)
-            // navigates to Details
+            closure()
         }
         var optionsArray = [UIAction]()
         for criteria in Criteria.allCases {

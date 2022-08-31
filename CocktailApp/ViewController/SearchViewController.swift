@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Lottie
 
 class SearchViewController: UIViewController {
     
@@ -13,6 +14,7 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var cocktailsTable: UITableView!
     @IBOutlet weak var alertLabel: UILabel!
+    @IBOutlet weak var animationView: AnimationView!
     
     var cocktails: [CocktailModel] { return CocktailViewModel.shared.cocktails ?? [] }
     var searchTimer: Timer? { willSet { searchTimer?.invalidate() } }
@@ -20,18 +22,37 @@ class SearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NetworkMonitor.shared.register(bidder: self)
         cocktailsTable.isHidden = true
         cocktailsTable.delegate = self
         cocktailsTable.dataSource = self
         cocktailsTable.register(UINib(nibName: "CocktailTableViewCell", bundle: nil), forCellReuseIdentifier: "CocktailTableViewCell")
         searchBar.delegate = self
         setupUI()
-        NetworkMonitor.shared.register(bidder: self)
+        setupAnimation()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        resetUI()
+        setupAnimation()
+    }
+    
+    private func setupAnimation() {
+        animationView.contentMode = .scaleAspectFit
+        animationView.animationSpeed = 1
+        animationView.loopMode = .loop
+        animationView.play()
+    }
+    
+    func resetUI() {
+        self.cocktailsTable.isHidden = true
+        self.searchBar.text = ""
+        self.alertLabel.isHidden = true
     }
     
     func setupUI() {
         [cocktailsTable, searchBar].forEach{ $0?.setCornerRadius() }
-        criteriaButton.menu = Functions.setPopUpButton()
+        criteriaButton.menu = Functions.setPopUpButton({self.resetUI()})
         cocktailsTable.isHidden = cocktails.isEmpty
         alertLabel.isHidden = true
     }
@@ -68,6 +89,7 @@ extension SearchViewController: UISearchBarDelegate {
             if query != ""{
                 CocktailViewModel.shared.getCocktails(query: query, criteria: criteria) {
                     timer.invalidate()
+                    self.cocktailsTable.isHidden = false
                     self.cocktailsTable.reloadData()
                     self.cocktailsTable.isHidden = self.cocktails.isEmpty
                     self.alertLabel.isHidden = !self.cocktails.isEmpty
@@ -90,8 +112,9 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let criteria = Criteria(rawValue: criteriaButton.titleLabel?.text ?? "") else {
+            return }
         tableView.isUserInteractionEnabled = false
-        guard let criteria = Criteria(rawValue: criteriaButton.titleLabel?.text ?? "") else { return }
         if criteria == Criteria.ingredients {
             let id = cocktails[indexPath.row].id
             CocktailViewModel.shared.getCocktails(query: id) {
@@ -105,7 +128,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
             let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ResultsViewController") as! ResultsViewController
             vc.cocktail = self.cocktails[indexPath.row]
             self.navigationController?.pushViewController(vc, animated: true)
-            
+            tableView.isUserInteractionEnabled = true
         }
     }
     
